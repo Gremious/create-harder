@@ -1,11 +1,10 @@
 package uk.co.gremy;
 
 import net.fabricmc.api.ModInitializer;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class Createharder implements ModInitializer {
+public class CreateHarder implements ModInitializer {
 	public static final String MOD_ID = "create-harder";
 
 	// This logger is used to write text to the console and the log file.
@@ -19,6 +18,8 @@ public class Createharder implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
+		CreateHarderItems.initialize();
 		LOGGER.info("Hello Fabric world!");
 	}
+
 }

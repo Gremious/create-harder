@@ -16,7 +16,7 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"uk.co.gremy.Createharder"
+          "uk.co.gremy.CreateHarder"
 		],
 		"client": [
 			"uk.co.gremy.CreateharderClient"
