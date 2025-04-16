@@ -19,10 +19,10 @@
           "uk.co.gremy.CreateHarder"
 		],
 		"client": [
-			"uk.co.gremy.CreateharderClient"
+			"uk.co.gremy.CreateHarderClient"
 		],
 		"fabric-datagen": [
-			"uk.co.gremy.CreateharderDataGenerator"
+			"uk.co.gremy.CreateHarderDataGenerator"
 		]
 	},
 	"mixins": [

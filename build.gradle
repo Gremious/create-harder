@@ -49,6 +49,7 @@ dependencies {
 
 processResources {
 	inputs.property "version", project.version
+	duplicatesStrategy = "INCLUDE"
 
 	filesMatching("fabric.mod.json") {
 		expand "version": inputs.properties.version
@@ -93,4 +94,15 @@ publishing {
 		// The repositories here will be used for publishing your artifact, not for
 		// retrieving dependencies.
 	}
+}
+
+tasks.register('copyResources') {
+	doLast {
+		copy {
+			duplicatesStrategy = "INCLUDE"
+			from(layout.getProjectDirectory().dir("src/main/generated/assets").dir(archives_base_name))
+			into(layout.getProjectDirectory().dir("src/main/resources/assets").dir(archives_base_name))
+		}
+	}
+	dependsOn(runDatagen)
 }
