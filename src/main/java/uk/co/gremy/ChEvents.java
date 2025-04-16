@@ -6,7 +6,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.Vec3d;
-import uk.co.gremy.items.ITEMS;
+import uk.co.gremy.items.ChItems;
 
 // Keep punching empty handed for cobble -> gravel -> sand?
 // Easier with a tag like "punchable" cause there's redsand and sandstone would make sense too.
@@ -14,11 +14,13 @@ import uk.co.gremy.items.ITEMS;
 public class ChEvents {
 	public static void registerEvents() {
 		PlayerBlockBreakEvents.AFTER.register((world, player, pos, state, entity) -> {
+
+
 			Block curr = state.getBlock();
 			if (!player.isSpectator() && player.getMainHandStack().isEmpty() /*&& state.getBlock() == Blocks.STONE*/ && !world.isClient) {
 				world.setBlockState(pos, Blocks.COBBLESTONE.getDefaultState());
 
-				ItemStack sharp_rock = new ItemStack(ITEMS.SHARP_ROCK.getItem());
+				ItemStack sharp_rock = new ItemStack(ChItems.SHARP_ROCK.getItem());
 
 				Vec3d blockPos = pos.toCenterPos();
 				Vec3d playerPosition = new Vec3d(player.getX(), player.getY(), player.getZ());
