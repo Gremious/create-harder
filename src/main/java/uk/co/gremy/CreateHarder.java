@@ -3,6 +3,7 @@ package uk.co.gremy;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import uk.co.gremy.items.ItemsInitializer;
 
 public class CreateHarder implements ModInitializer {
     public static final String MOD_ID = "create-harder";
@@ -14,7 +15,7 @@ public class CreateHarder implements ModInitializer {
         // However, some things (like resources) may still be uninitialized.
         // Proceed with mild caution.
 
-        ChItemsRegistrar.initialize();
+        ItemsInitializer.initialize();
         ChEvents.registerEvents();
         LOGGER.info("Hello from harder create! Enjoy!");
     }

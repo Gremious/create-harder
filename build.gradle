@@ -96,7 +96,7 @@ publishing {
 	}
 }
 
-tasks.register('copyResources') {
+tasks.register('dataGenCopy') {
 	doLast {
 		copy {
 			duplicatesStrategy = "INCLUDE"

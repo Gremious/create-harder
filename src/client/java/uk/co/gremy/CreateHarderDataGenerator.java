@@ -9,6 +9,8 @@ import net.minecraft.data.DataOutput;
 import net.minecraft.data.DataProvider;
 import net.minecraft.data.DataWriter;
 import net.minecraft.util.Identifier;
+import uk.co.gremy.items.ChItem;
+import uk.co.gremy.items.ItemsInitializer;
 
 import java.nio.file.Path;
 import java.util.Map;
@@ -62,7 +64,10 @@ public class CreateHarderDataGenerator implements DataGeneratorEntrypoint {
 		public void generateTranslations(TranslationBuilder translationBuilder) {
 			// I don't care about the existing file, full generate/override every time please.
 			// Feat. let's not do a billion item lines
-			for (ChItem item : ChItemsRegistrar.ITEMS) { translationBuilder.add(item, item.Name); }
+			for (ItemsInitializer.ITEMS enumItem : ItemsInitializer.ITEMS.values()) {
+				ChItem item = enumItem.getItem();
+				translationBuilder.add(item, item.Name);
+			}
 		}
 	}
 }
