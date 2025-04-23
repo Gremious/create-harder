@@ -1,0 +1,8 @@
+{
+  "credit": "Made with Blockbench",
+  "parent": "builtin/entity",
+  "textures": {
+    "0": "create-harder:item/sharp_rock",
+    "particle": "create-harder:item/sharp_rock"
+  }
+}

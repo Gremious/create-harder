@@ -3,6 +3,7 @@ package uk.co.gremy;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import uk.co.gremy.events.RegisterChEvents;
 import uk.co.gremy.items.ItemsInitializer;
 
 public class CreateHarder implements ModInitializer {
@@ -16,7 +17,7 @@ public class CreateHarder implements ModInitializer {
         // Proceed with mild caution.
 
         ItemsInitializer.initialize();
-        ChEvents.registerEvents();
+        RegisterChEvents.registerEvents();
         LOGGER.info("Hello from harder create! Enjoy!");
     }
 }
